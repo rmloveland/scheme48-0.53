@@ -1,3 +1,9 @@
+********************************************************************
+Note: this version of Scheme 48 0.53 has been modified by Rich
+Loveland for his own educational use. You don't want this code! Please
+visit http://s48.org for a current, maintained release of Scheme 48.
+********************************************************************
+
 ; Copyright (c) 1993-1999 by Richard Kelsey and Jonathan Rees. See file COPYING.
 
 Please report bugs to scheme-48-bugs@martigny.ai.mit.edu, and include
@@ -33,7 +39,7 @@ listed here):
     README		this file
     INSTALL		installation instructions
     COPYING		copyright notice
-    configure		configuration script
+    configure.in        configuration template script
     Makefile.in		input to configure
     doc/		some documentation
       scheme48.man	a Unix-style manual page
@@ -90,4 +96,3 @@ listed here):
       initial.scm	script for creating initial.image
       build-usual-image	script for creating scheme48.image
       build-external-modules script for creating external-module initializer
-    emacs/		gnu emacs support
