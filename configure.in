@@ -46,7 +46,7 @@ define(S48_PROG_CC, [dnl
 		if test "z$GCC" = z; then
 			CFLAGS='-O'
 		else
-			CFLAGS='-O2'
+			CFLAGS='-O2 -m32' dnl Scheme48 requires 32-bit build.
 		fi
 	fi
 ])dnl
