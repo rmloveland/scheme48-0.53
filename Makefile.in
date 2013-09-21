@@ -102,7 +102,7 @@ CONFIG_FILES = scheme/interfaces.scm scheme/low-packages.scm \
 
 # The following is the first rule and therefore the "make" command's
 # default target.
-enough: $(VM) $(IMAGE) go .notify
+enough: $(VM) $(IMAGE) go
 
 # --------------------
 # External code to include in the VM
@@ -134,13 +134,6 @@ LOOKUP_INITIALIZERS = 	s48_init_external_lookup
 # End of lookup rules
 # End of external rules
 # --------------------
-
-# The developers are curious to know.  Don't be concerned if this fails.
-.notify: build/minor-version-number
-	touch .notify
-	-echo Another 0.`cat $(srcdir)/build/minor-version-number` \
-		installation. \
-		| mail scheme-48-notifications@martigny.ai.mit.edu
 
 $(VM): c/main.o $(OBJS) $(UNIX_OBJS) $(LIBOBJS) $(EXTERNAL_OBJECTS)
 	rm -f /tmp/s48_external_$$$$.c &&					\
