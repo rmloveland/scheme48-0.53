@@ -23,12 +23,12 @@ define(S48_CFLAG_CKR, [dnl
 	fi
 ])dnl
 dnl
+dnl Rich Loveland 21 Sep 2013: Add check for Mac OS X dylibs.
 define(S48_POSIX_LIBC, [dnl
 echo checking for RISC/OS POSIX library lossage
 if test -f /usr/posix/usr/lib/libc.a; then
   LIBS="${LIBS} /usr/posix/usr/lib/libc.a"
 fi
-
 echo checking for Mac OS X dynamic libraries
 if test -f /usr/lib/libc.dylib; then
   LIBS="${LIBS} /usr/lib/libc.dylib"
@@ -39,6 +39,7 @@ dnl Run AC_PROG_CC, but don't accept it's changes to CFLAGS.
 dnl For some insane reason, it sets CFLAGS to either `-O' or `-g -O' for gcc.
 dnl I don't want the silly -g (because if you are using nlist, you can't strip
 dnl the binary), I want -O2 for gcc and -O for other C compilers.
+dnl Rich Loveland 21 Sep 2013: Adding another flag to force 32-bit builds.
 define(S48_PROG_CC, [dnl
 	oldCFLAGS="$CFLAGS"
 	AC_PROG_CC
@@ -46,7 +47,7 @@ define(S48_PROG_CC, [dnl
 		if test "z$GCC" = z; then
 			CFLAGS='-O'
 		else
-			CFLAGS='-O2 -m32' dnl Scheme48 requires 32-bit build.
+			CFLAGS='-O2 -m32'
 		fi
 	fi
 ])dnl
