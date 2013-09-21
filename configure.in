@@ -28,6 +28,11 @@ echo checking for RISC/OS POSIX library lossage
 if test -f /usr/posix/usr/lib/libc.a; then
   LIBS="${LIBS} /usr/posix/usr/lib/libc.a"
 fi
+
+echo checking for Mac OS X dynamic libraries
+if test -f /usr/lib/libc.dylib; then
+  LIBS="${LIBS} /usr/lib/libc.dylib"
+fi
 ])dnl
 dnl
 dnl Run AC_PROG_CC, but don't accept it's changes to CFLAGS.
