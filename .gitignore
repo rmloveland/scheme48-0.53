@@ -1,0 +1,10 @@
+TAGS
+Makefile
+autom4te.cache*
+*.o
+config.log
+config.status
+configure
+go
+scheme48.image
+scheme48vm
